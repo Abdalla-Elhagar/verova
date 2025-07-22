@@ -14,3 +14,9 @@
 .hero {
   background-image: url("../../public/images/hero.png");
 }
+.gender .men {
+  background-image: url("../../public/images/gender/men.png");
+}
+.gender .women {
+  background-image: url("../../public/images/gender/women.png");
+}

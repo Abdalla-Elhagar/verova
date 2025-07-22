@@ -66,7 +66,7 @@ const termsAndPolicy = [
 export default function Footer() {
 
   return (
-    <footer className=' min-h-[300px]'>
+    <footer className=' min-h-[300px] mt-10'>
         <div className="container ">
             <div className="top flex justify-center lg:justify-between items-start gap-20 md:text-start text-center  flex-wrap ">
                 <div className="contact">
