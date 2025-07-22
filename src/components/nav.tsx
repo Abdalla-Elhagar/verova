@@ -3,12 +3,34 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { BsHandbag } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation'; 
 
 export default function Nav() {
     const router = useRouter();
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
+
+
+
+    const links = [
+        {
+            name:"Home",
+            pathName:"/",
+        },
+        {
+            name:"Men's",
+            pathName:"/men",
+        },
+        {
+            name:"Women's",
+            pathName:"/women",
+        },
+        {
+            name:"Shop",
+            pathName:"/shop",
+        },
+        
+    ]
 
     return (
         <>
@@ -55,54 +77,22 @@ export default function Nav() {
 
                 {/* Top/Side Links */}
                 <ul className="flex flex-col gap-8 items-center sm:flex-row sm:gap-4 sm:pl-4">
-                    <li>
+                    {links.map((link,index) => (
+                        <li key={index}>
                         <Link
-                            href="/"
+                            href={link.pathName}
                             className={`font-medium transition-colors duration-200 px-2 pb-1
-                                ${pathname === '/' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
+                                ${pathname === link.pathName ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
                             `}
                             onClick={() => setOpen(false)}
                         >
-                            <span className="hidden sm:inline">Home</span>
-                            <span className="sm:hidden">Home</span>
+                            <span className="hidden sm:inline">{link.name}</span>
+                            <span className="sm:hidden">{link.name}</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link
-                            href="/men"
-                            className={`font-medium transition-colors duration-200 px-2 pb-1
-                                ${pathname === '/men' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
-                            `}
-                            onClick={() => setOpen(false)}
-                        >
-                            <span className="hidden sm:inline">Men's</span>
-                            <span className="sm:hidden">Men's</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/women"
-                            className={`font-medium transition-colors duration-200 px-2 pb-1
-                                ${pathname === '/women' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
-                            `}
-                            onClick={() => setOpen(false)}
-                        >
-                            <span className="hidden sm:inline">Women's</span>
-                            <span className="sm:hidden">Women's</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/shop"
-                            className={`font-medium transition-colors duration-200 px-2 pb-1
-                                ${pathname === '/shop' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
-                            `}
-                            onClick={() => setOpen(false)}
-                        >
-                            <span className="hidden sm:inline">Shop</span>
-                            <span className="sm:hidden">Shop</span>
-                        </Link>
-                    </li>
+                    ))}
+                    
+                    
                 </ul>
                 {/* Brand */}
                 <div className="flex justify-center items-center sm:static sm:order-none">
