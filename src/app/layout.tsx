@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{ padding:"20px"}}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Nav  />
         {children}
         <Footer />

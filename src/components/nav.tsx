@@ -55,9 +55,9 @@ export default function Nav() {
 
             {/* Side Navbar (Mobile) & Top Navbar (Desktop) */}
             <nav
-                className={`
+                className={` z-[99999]
                     px-4
-                    fixed left-0 top-0 h-full w-64 bg-white border-r shadow-lg z-50 flex flex-col items-center justify-between py-6
+                    fixed left-0 top-0 h-full w-64 bg-white border-r shadow-lg flex flex-col items-center justify-between py-6
                     transition-transform duration-300
                     ${open ? 'translate-x-0' : '-translate-x-full'}
                     sm:static sm:translate-x-0 sm:w-full sm:h-16 sm:flex-row sm:justify-between sm:items-center sm:shadow-none sm:border-0 sm:px-10
