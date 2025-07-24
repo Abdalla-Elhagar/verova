@@ -1,9 +1,14 @@
-import React from 'react'
+'use client'
+import ProductCart from '@/components/ProductCart'
+import React, { useEffect, useState } from 'react'
 
-function Shop() {
+export default function Shop() {
+  
+
   return (
-    <div>Shop</div>
+    <div>
+      <h1>Shop</h1>
+      <ProductCart />
+    </div>
   )
 }
-
-export default Shop
