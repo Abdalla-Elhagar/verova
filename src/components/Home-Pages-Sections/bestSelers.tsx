@@ -1,7 +1,7 @@
 import React from 'react'
-import greenHoodie from '../../public/images/bestSelers/greenHoodie.png'
-import whiteShirt from '../../public/images/bestSelers/whiteTShirt.png'
-import blackTShirt from '../../public/images/bestSelers/blackTShirt.png'
+import greenHoodie from '../../../public/images/bestSelers/greenHoodie.png'
+import whiteShirt from '../../../public/images/bestSelers/whiteTShirt.png'
+import blackTShirt from '../../../public/images/bestSelers/blackTShirt.png'
 import Image from 'next/image'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
