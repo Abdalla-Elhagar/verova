@@ -10,8 +10,6 @@ export default function Nav() {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
 
-
-
     const links = [
         {
             name:"Home",
@@ -82,7 +80,7 @@ export default function Nav() {
                         <Link
                             href={link.pathName}
                             className={`font-medium transition-colors duration-200 px-2 pb-1
-                                ${pathname === link.pathName ? 'border-b-2 border-blue-500 text-blue-600' : 'text-blue-600 hover:text-blue-500'}
+                                ${pathname === link.pathName ? 'border-b-2 border-blue-500 text-blue-500' : ' hover:text-blue-500'}
                             `}
                             onClick={() => setOpen(false)}
                         >
@@ -96,12 +94,13 @@ export default function Nav() {
                 </ul>
                 {/* Brand */}
                 <div className="flex justify-center items-center sm:static sm:order-none">
-                    <p className="hidden sm:flex text-blue-500 text-[32px] w-[168px] h-[55px] items-center justify-center">
+                    <p className="hidden sm:flex font-bold text-blue-500 text-[32px] w-[168px] h-[55px] items-center justify-center">
                         Vérova
                     </p>
-                    <p className="flex sm:hidden text-blue-500 text-[32px] w-[168px] h-[55px] items-center justify-center">
+                    <p className="flex sm:hidden font-bold text-blue-500 text-[32px] w-[168px] h-[55px] items-center justify-center">
                         Vérova
                     </p>
+
                 </div>
                 {/* Bottom/Side Icons & Button */}
                 <ul className="flex flex-col gap-6 items-center sm:flex-row sm:gap-4 sm:pr-4">
@@ -121,15 +120,14 @@ export default function Nav() {
                                 rounded-xl shadow-md transition-all duration-200
                                 flex items-center justify-center
                                 w-32 h-10 px-4 py-2
-                                hover:bg-cyan-600
+                                hover:scale-105
                             "
                             aria-label="Login"
                         >
                             <span className="sm:hidden text-lg">Login</span>
                             <span className="hidden sm:inline text-lg">Login</span>
                         </button>
-                    </li>   
-                                
+                    </li>             
                 </ul>
             </nav>
         </>
