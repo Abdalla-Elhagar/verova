@@ -1,5 +1,6 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsHandbag } from 'react-icons/bs';
+
 interface Product {
   id: number;
   imageCover: string;
@@ -7,8 +8,6 @@ interface Product {
   description: string;
   price: number;
 }
-
-
 export default function ProductCart() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
