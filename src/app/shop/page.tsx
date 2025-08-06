@@ -1,13 +1,20 @@
-import ProductCard from '@/components/productCard'
-import React from 'react'
+import React from 'react';
+import ProductCard from '@/components/productCard';
+import { fetchAllProducts, Product } from '@/utils/allProducts';
 
-function Shop() {
+export default async function Shop() {
+  let products: Product[] = [];
+
+  try {
+    products = await fetchAllProducts();
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
+
   return (
     <>
-     <div>Shop</div>
-      <ProductCard />
+      <div>Shop</div>
+      <ProductCard products={products} />
     </>
-  )
+  );
 }
-
-export default Shop
