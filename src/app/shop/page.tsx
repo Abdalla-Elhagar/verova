@@ -1,9 +1,17 @@
 import React from 'react';
 import ProductCard from '@/components/productCard';
-import { fetchAllProducts, Product } from '@/utils/allProducts';
+import { fetchAllProducts } from '@/utils/allProducts';
+  export interface Product {
+  id: number;
+  imageCover: string;
+  title: string;
+  description: string;
+  price: number;
+}
+let products: Product[] = [];
 
 export default async function Shop() {
-  let products: Product[] = [];
+  
 
   try {
     products = await fetchAllProducts();
@@ -14,7 +22,13 @@ export default async function Shop() {
   return (
     <>
       <div>Shop</div>
-      <ProductCard products={products} />
+          <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center">
+      {
+        products.length > 0 ? products.map((product) =>
+            <ProductCard key={product.id} product={product} />
+         ) :<div>No products found.</div>
+      }
+ </div>
     </>
   );
 }

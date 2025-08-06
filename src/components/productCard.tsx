@@ -1,25 +1,13 @@
 import React from 'react';
 import { BsHandbag } from 'react-icons/bs';
+import { Product } from '@/utils/allProducts';
 
-export interface Product {
-  id: number;
-  imageCover: string;
-  title: string;
-  description: string;
-  price: number;
-}
 
-interface ProductCardProps {
-  products: Product[];
-}
 
-export default function ProductCard({ products }: ProductCardProps) {
-  if (!products || products.length === 0) return <div>No products found.</div>;
+export default function ProductCard({ product }: { product: Product }) {
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center">
-      {products.map((product) => (
-        <div key={product.id} style={{ width: "253px", margin: "20px" }}>
+        <div style={{ width: "253px", margin: "20px" }}>
           <img
             src={product.imageCover}
             alt={product.title}
@@ -33,7 +21,5 @@ export default function ProductCard({ products }: ProductCardProps) {
           </div>
           <p>{product.price}$</p>
         </div>
-      ))}
-    </div>
   );
 }
