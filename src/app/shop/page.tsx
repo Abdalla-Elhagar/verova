@@ -1,14 +1,18 @@
 'use client'
 import ProductCart from '@/components/ProductCart'
-import React, { useEffect, useState } from 'react'
+import Poster from '@/components/Shop-sections/Poster'
 
 export default function Shop() {
   
 
   return (
     <div>
-      <h1>Shop</h1>
-      <ProductCart />
+      <Poster />
+      <div className="shopContent grid grid-cols-4">
+        
+        
+      </div>
+      {/* <ProductCart /> */}
     </div>
   )
 }
