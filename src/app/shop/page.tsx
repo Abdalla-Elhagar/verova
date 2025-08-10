@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from '@/components/productCard';
 import { fetchAllProducts } from '@/utils/allProducts';
+
+
   export interface Product {
   id: number;
   imageCover: string;
