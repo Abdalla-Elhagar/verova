@@ -4,8 +4,11 @@ export interface Product {
   title: string;
   description: string;
   price: number;
+  category: {
+    name: string;
+  };
 }
-export async function fetchAllProducts(): Promise<Product[]> {
+export default async function fetchAllProducts(): Promise<Product[]> {
   const res = await fetch('https://ecommerce.routemisr.com/api/v1/products', {
     next: { revalidate: 60 },
     cache: 'no-store',
